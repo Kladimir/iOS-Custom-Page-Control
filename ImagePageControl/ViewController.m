@@ -81,9 +81,34 @@
 
 - (void)changePage:(int)page 
 {
+    // Lock the scrollview
+    changingPage = YES;
+    
     CGRect frame = scrollView.frame;
     frame.origin.x = frame.size.width * currentPage;
     frame.origin.y = 0;
+    
+    // Change the icon to enabled
+    switch (page) {
+        case PAGE_APPLE:
+            [image_first setImage:[UIImage imageNamed:@"apple_enabled.png"]];
+            [image_second setImage:[UIImage imageNamed:@"skype_disabled.png"]];
+            [image_third setImage:[UIImage imageNamed:@"twitter_disabled.png"]];
+            break;
+        case PAGE_SKYPE:
+            [image_first setImage:[UIImage imageNamed:@"apple_disabled.png"]];
+            [image_second setImage:[UIImage imageNamed:@"skype_enabled.png"]];
+            [image_third setImage:[UIImage imageNamed:@"twitter_disabled.png"]];
+            break;
+        case PAGE_TWITTER:
+            [image_first setImage:[UIImage imageNamed:@"apple_disabled.png"]];
+            [image_second setImage:[UIImage imageNamed:@"skype_disabled.png"]];
+            [image_third setImage:[UIImage imageNamed:@"twitter_enabled.png"]];
+            break;
+        default:
+            NSLog(@"Trying to change to a page that doesn't exist");
+            break;
+    }
 }
 
 #pragma mark - UIScrollviewDelegate methods
@@ -99,7 +124,6 @@
     
 
     // Change to that page
-    changingPage = YES;
     [self changePage:page];
 }
 

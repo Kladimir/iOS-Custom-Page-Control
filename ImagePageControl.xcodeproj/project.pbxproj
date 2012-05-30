@@ -15,6 +15,12 @@
 		2E1022D21575281D00940B3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1022D11575281D00940B3C /* AppDelegate.m */; };
 		2E1022D51575281D00940B3C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E1022D31575281D00940B3C /* MainStoryboard.storyboard */; };
 		2E1022D81575281D00940B3C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1022D71575281D00940B3C /* ViewController.m */; };
+		F481EB10157612C60038EA5B /* twitter_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = F481EB0D157612C60038EA5B /* twitter_disabled.png */; };
+		F481EB12157612C60038EA5B /* skype_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = F481EB0F157612C60038EA5B /* skype_disabled.png */; };
+		F481EB14157612F00038EA5B /* apple_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = F481EB13157612F00038EA5B /* apple_disabled.png */; };
+		F481EB19157614D40038EA5B /* apple_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = F481EB16157614D40038EA5B /* apple_enabled.png */; };
+		F481EB1A157614D40038EA5B /* skype_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = F481EB17157614D40038EA5B /* skype_enabled.png */; };
+		F481EB1B157614D40038EA5B /* twitter_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = F481EB18157614D40038EA5B /* twitter_enabled.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +37,13 @@
 		2E1022D41575281D00940B3C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2E1022D61575281D00940B3C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2E1022D71575281D00940B3C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F481EB0D157612C60038EA5B /* twitter_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_disabled.png; sourceTree = "<group>"; };
+		F481EB0F157612C60038EA5B /* skype_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skype_disabled.png; sourceTree = "<group>"; };
+		F481EB13157612F00038EA5B /* apple_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple_disabled.png; sourceTree = "<group>"; };
+		F481EB151576132E0038EA5B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		F481EB16157614D40038EA5B /* apple_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple_enabled.png; sourceTree = "<group>"; };
+		F481EB17157614D40038EA5B /* skype_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skype_enabled.png; sourceTree = "<group>"; };
+		F481EB18157614D40038EA5B /* twitter_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_enabled.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +92,10 @@
 			children = (
 				2E1022D01575281D00940B3C /* AppDelegate.h */,
 				2E1022D11575281D00940B3C /* AppDelegate.m */,
-				2E1022D31575281D00940B3C /* MainStoryboard.storyboard */,
 				2E1022D61575281D00940B3C /* ViewController.h */,
 				2E1022D71575281D00940B3C /* ViewController.m */,
 				2E1022C81575281D00940B3C /* Supporting Files */,
+				F481EB0B157611D00038EA5B /* Resources */,
 			);
 			path = ImagePageControl;
 			sourceTree = "<group>";
@@ -94,8 +107,23 @@
 				2E1022CA1575281D00940B3C /* InfoPlist.strings */,
 				2E1022CD1575281D00940B3C /* main.m */,
 				2E1022CF1575281D00940B3C /* ImagePageControl-Prefix.pch */,
+				F481EB151576132E0038EA5B /* Constants.h */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F481EB0B157611D00038EA5B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F481EB13157612F00038EA5B /* apple_disabled.png */,
+				F481EB0D157612C60038EA5B /* twitter_disabled.png */,
+				F481EB0F157612C60038EA5B /* skype_disabled.png */,
+				F481EB16157614D40038EA5B /* apple_enabled.png */,
+				F481EB17157614D40038EA5B /* skype_enabled.png */,
+				F481EB18157614D40038EA5B /* twitter_enabled.png */,
+				2E1022D31575281D00940B3C /* MainStoryboard.storyboard */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +179,12 @@
 			files = (
 				2E1022CC1575281D00940B3C /* InfoPlist.strings in Resources */,
 				2E1022D51575281D00940B3C /* MainStoryboard.storyboard in Resources */,
+				F481EB10157612C60038EA5B /* twitter_disabled.png in Resources */,
+				F481EB12157612C60038EA5B /* skype_disabled.png in Resources */,
+				F481EB14157612F00038EA5B /* apple_disabled.png in Resources */,
+				F481EB19157614D40038EA5B /* apple_enabled.png in Resources */,
+				F481EB1A157614D40038EA5B /* skype_enabled.png in Resources */,
+				F481EB1B157614D40038EA5B /* twitter_enabled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +309,7 @@
 				2E1022DD1575281D00940B3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
