@@ -27,10 +27,6 @@
 {
     [super viewDidLoad];
     
-    // Set some vars
-    changingPage = NO;
-    currentPage = 0;
-    
     // Init the scrollview with data and properties
 	[self setupPage];
 }
@@ -45,6 +41,12 @@
 #pragma mark - Internal methods
 - (void)setupPage
 {
+    // Show the menu images
+    [self.view bringSubviewToFront:image_first];
+    [self.view bringSubviewToFront:image_second];
+    [self.view bringSubviewToFront:image_third];
+    
+    
     // Setup the scrollview properties
     scrollView.delegate = self;
     scrollView.CanCancelContentTouches = NO;
@@ -59,7 +61,6 @@
     for (unsigned i = 0; i < 3; i++) {
         UILabel *label = [[UILabel alloc] init];
         [label setText:[NSString stringWithFormat:@"This is screen number %i", i]];
-        [label setBackgroundColor:[UIColor redColor]];
         [label sizeToFit];
         
         CGRect rect = label.frame;
@@ -79,13 +80,17 @@
 }
 
 
-- (void)changePage:(int)page 
+#pragma mark - UIScrollviewDelegate methods
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)_scrollView 
 {
-    // Lock the scrollview
-    changingPage = YES;
+    // Calculate which page we will land on
+    CGFloat pageWidth = _scrollView.frame.size.width;
+    int page = floor((_scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    
     
     CGRect frame = scrollView.frame;
-    frame.origin.x = frame.size.width * currentPage;
+    frame.origin.x = frame.size.width * page;
     frame.origin.y = 0;
     
     // Change the icon to enabled
@@ -109,27 +114,6 @@
             NSLog(@"Trying to change to a page that doesn't exist");
             break;
     }
-}
-
-#pragma mark - UIScrollviewDelegate methods
-- (void)scrollViewDidScroll:(UIScrollView *)_scrollView
-{
-    if (changingPage) {
-        return;
-    }
-
-    // Calculate which page we will land on
-    CGFloat pageWidth = _scrollView.frame.size.width;
-    int page = floor((_scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    
-
-    // Change to that page
-    [self changePage:page];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)_scrollView 
-{
-    changingPage = NO;
 }
 
 @end

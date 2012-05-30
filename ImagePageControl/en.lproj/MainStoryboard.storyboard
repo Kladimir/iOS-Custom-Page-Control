@@ -9,25 +9,37 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3Mk-XA-MME">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="apple_disabled.png" id="fQh-FT-bk0">
-                                <rect key="frame" x="105" y="20" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="skype_disabled.png" id="00r-bh-NZn">
-                                <rect key="frame" x="148" y="20" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="twitter_disabled.png" id="MgU-lb-rOH">
-                                <rect key="frame" x="188" y="20" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                    </scrollView>
+                    <connections>
+                        <outlet property="image_first" destination="fQh-FT-bk0" id="3dn-J7-spV"/>
+                        <outlet property="image_second" destination="00r-bh-NZn" id="5x7-d4-Hoz"/>
+                        <outlet property="image_third" destination="MgU-lb-rOH" id="DJX-Mx-s6d"/>
+                        <outlet property="scrollView" destination="IQp-lo-39Z" id="jFk-vh-S9e"/>
+                        <outlet property="view" destination="zFw-it-G5T" id="6iz-h1-Bry"/>
+                    </connections>
                 </viewController>
+                <view contentMode="scaleToFill" id="zFw-it-G5T">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="apple_disabled.png" id="fQh-FT-bk0">
+                            <rect key="frame" x="91" y="32" width="25" height="25"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="skype_disabled.png" id="00r-bh-NZn">
+                            <rect key="frame" x="140" y="32" width="25" height="25"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="twitter_disabled.png" id="MgU-lb-rOH">
+                            <rect key="frame" x="189" y="32" width="25" height="25"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="IQp-lo-39Z">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="54" y="96"/>
         </scene>

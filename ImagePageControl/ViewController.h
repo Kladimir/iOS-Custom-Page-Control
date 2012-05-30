@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController <UIScrollViewDelegate> {
-    BOOL changingPage;
-    int currentPage;
 }
 
 
@@ -21,7 +19,5 @@
 
 
 - (void)setupPage;
-- (void)changePage:(int)page;
-
 
 @end
