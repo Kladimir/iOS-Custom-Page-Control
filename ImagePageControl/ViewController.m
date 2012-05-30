@@ -45,7 +45,6 @@
 #pragma mark - Internal methods
 - (void)setupPage
 {
-    NSLog(@"Inside setuppage");
     // Setup the scrollview properties
     scrollView.delegate = self;
     scrollView.CanCancelContentTouches = NO;
@@ -58,7 +57,6 @@
     CGFloat cx;
     
     for (unsigned i = 0; i < 3; i++) {
-        NSLog(@"Inside for loop");
         UILabel *label = [[UILabel alloc] init];
         [label setText:[NSString stringWithFormat:@"This is screen number %i", i]];
         [label setBackgroundColor:[UIColor redColor]];
@@ -86,10 +84,6 @@
     CGRect frame = scrollView.frame;
     frame.origin.x = frame.size.width * currentPage;
     frame.origin.y = 0;
-	
-    [scrollView scrollRectToVisible:frame animated:YES];
-    
-    changingPage = YES;
 }
 
 #pragma mark - UIScrollviewDelegate methods
@@ -101,9 +95,11 @@
 
     // Calculate which page we will land on
     CGFloat pageWidth = _scrollView.frame.size.width;
-    int page = floor((_scrollView.contentOffset.x - pageWidth) / pageWidth) + 1;
+    int page = floor((_scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     
+
     // Change to that page
+    changingPage = YES;
     [self changePage:page];
 }
 
